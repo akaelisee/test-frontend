@@ -1,15 +1,23 @@
 import "./App.css";
-
 import React from "react";
-import logo from "./logo-pass-culture.svg";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import News from "./Pages/News/News";
+import Form from "./Pages/Form/Form";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<News />}>
+            <Route path="/form" element={<Form />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
